@@ -27,8 +27,9 @@ int main(){
     printf("%-13s| %-8s| %-5s| %-5s| %-6s\n", "Name", "Brand", "Price", "RAM", "Color");
     printf("-----------------------------------------------------\n");
     for (int i = 0; i < len; i++) {
-        printf("%-13s| %-8s| %-5d| %-5s| %-6s\n", 
-            phones[i].name, phones[i].brand, phones[i].price, phones[i].ram, phones[i].color);
+        if(phones[i].price > 500)
+            printf("%-13s| %-8s| %-5d| %-5s| %-6s\n", 
+                phones[i].name, phones[i].brand, phones[i].price, phones[i].ram, phones[i].color);
     }
     return 0;
 }
