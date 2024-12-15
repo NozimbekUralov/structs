@@ -23,11 +23,18 @@ Car cars[] = {
 int len = sizeof(cars) / sizeof(Car);
 
 int main(){
+    int max_price = cars[0].price;
+
+    for (int i = 1; i < len; i++) {
+        if (cars[i].price > max_price) max_price = cars[i].price;
+    }
+
     printf("Eng qimmat mashina:\n");
     printf("%-9s| %-11s| %-7s| %-5s\n", "Model", "Brand", "Price", "Year");
     printf("---------------------------------------\n");
     for (int i = 0; i < len; i++) {
-        printf("%-9s| %-11s| %-7d| %-5d\n", cars[i].model, cars[i].brand, cars[i].price, cars[i].year);
+        if (cars[i].price == max_price)
+            printf("%-9s| %-11s| %-7d| %-5d\n", cars[i].model, cars[i].brand, cars[i].price, cars[i].year);
     }
     return 0;
 }
