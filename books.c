@@ -32,7 +32,8 @@ int main(){
     printf("%-7s| %-6s| %-13s| %-12s| %s\n", "Title", "Price", "Published In", "Author Name", "Author Birth Year");
     printf("-----------------------------------------------------\n");
     for (int i = 0; i < len; i++) {
-        printf("%-7s| %-6.2f| %-13d| %-12s| %d\n", books[i].title, books[i].price, books[i].publish_year, books[i].auther.name, books[i].auther.birth_year);
+        if(books[i].publish_year >= 2000)
+            printf("%-7s| %-6.2f| %-13d| %-12s| %d\n", books[i].title, books[i].price, books[i].publish_year, books[i].auther.name, books[i].auther.birth_year);
     }
     return 0;
 }
