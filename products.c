@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 typedef struct {
     char name[32];
@@ -23,11 +24,13 @@ Grocery groceries[10] = {
 int len = sizeof(groceries) / sizeof(Grocery);
 
 int main(){
+
     printf("Sut mahsulotlari:\n");
     printf("%-12s| %-9s| %-6s| %-9s\n", "Name", "Category", "Price", "Quantity");
     printf("-----------------------------------------\n");
     for (int i = 0; i < len; i++) {
-        printf("%-12s| %-9s| %-6.2f| %-9d\n", groceries[i].name, groceries[i].category, groceries[i].price, groceries[i].quantity);
+        if(strcmp(groceries[i].category, "Dairy") == 0)
+            printf("%-12s| %-9s| %-6.2f| %-9d\n", groceries[i].name, groceries[i].category, groceries[i].price, groceries[i].quantity);
     }
     return 0;
 }
